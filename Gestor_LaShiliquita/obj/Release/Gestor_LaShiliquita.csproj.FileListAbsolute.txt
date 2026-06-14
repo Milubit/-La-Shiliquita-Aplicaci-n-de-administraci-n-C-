@@ -1,0 +1,16 @@
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\obj\Release\Gestor_LaShiliquita.csproj.AssemblyReference.cache
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\obj\Release\Gestor_LaShiliquita.Form1.resources
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\obj\Release\Gestor_LaShiliquita.FrmAdministracion.resources
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\obj\Release\Gestor_LaShiliquita.FrmMantenimientoProductos.resources
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\obj\Release\Gestor_LaShiliquita.FrmVenta.resources
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\obj\Release\Gestor_LaShiliquita.Properties.Resources.resources
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\obj\Release\Gestor_LaShiliquita.csproj.GenerateResource.cache
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\obj\Release\Gestor_LaShiliquita.csproj.CoreCompileInputs.cache
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\bin\Release\Gestor_LaShiliquita.exe.config
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\bin\Release\Gestor_LaShiliquita.exe
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\bin\Release\Gestor_LaShiliquita.pdb
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\bin\Release\System.Data.SqlClient.dll
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\bin\Release\System.Data.SqlClient.xml
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\obj\Release\Gestor_L.D0F80FCF.Up2Date
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\obj\Release\Gestor_LaShiliquita.exe
+C:\Users\Ritchier Fernando\Documents\Universidad Mile\1.BASE DE DATOS\Apk_LaShiliquita\Gestor_LaShiliquita\obj\Release\Gestor_LaShiliquita.pdb
