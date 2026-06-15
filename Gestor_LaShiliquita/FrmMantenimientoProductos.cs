@@ -22,8 +22,17 @@ namespace Gestor_LaShiliquita
         }
         private void CargarDatosIniciales()
         {
+            cmbCategoriaP.Items.Clear();
+            cmbCategoriaP.Items.Add("Barras de Chocolate");
+            cmbCategoriaP.Items.Add("Chocolates Rellenos");
+            cmbCategoriaP.Items.Add("Trufas y Bombones");
+            cmbCategoriaP.Items.Add("Bebidas de Cacao");
+            cmbCategoriaP.Items.Add("Packs y Regalos");
+            cmbCategoriaP.Items.Add("Otros");
+            cmbCategoriaP.SelectedIndex = 5;
             ListarProductos();
             CargarProveedores();
+
         }
         private void ListarProductos()
         {
@@ -76,71 +85,59 @@ namespace Gestor_LaShiliquita
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtIDProducto.Text) ||
-                string.IsNullOrWhiteSpace(txtNomProd.Text) ||
-                string.IsNullOrWhiteSpace(txtPrecio.Text) ||
-                string.IsNullOrWhiteSpace(txtStock.Text))
+            if (string.IsNullOrWhiteSpace(txtbIDProducto.Text) ||
+        string.IsNullOrWhiteSpace(txtbNombreProducto.Text) ||
+        string.IsNullOrWhiteSpace(txtbPrecioProducto.Text) ||
+        string.IsNullOrWhiteSpace(txtbStockProducto.Text))
             {
                 MessageBox.Show("Por favor, complete los campos obligatorios del producto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // 2. Validar que se haya seleccionado un proveedor real de la lista
+            if (!decimal.TryParse(txtbPrecioProducto.Text.Trim(), out decimal precioConvertido))
+            {
+                MessageBox.Show("Por favor, ingrese un precio numérico válido (Ejemplo: 15.00).", "Formato Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!int.TryParse(txtbStockProducto.Text.Trim(), out int stockConvertido))
+            {
+                MessageBox.Show("Por favor, ingrese un número entero válido para el Stock (Ejemplo: 12).", "Formato Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (cmbProveedor.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor, seleccione un proveedor válido para este producto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            string query = "INSERT INTO PRODUCTOS (IDProducto, nomProd, descripcion, categoria, precio, stock, nroDocProveedor) " +
+                           "VALUES (@id, @nombre, @descripcion, @categoria, @precio, @stock, @nroDocProveedor)";
             using (SqlConnection conexion = new SqlConnection(conexionString))
             {
-                try
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
-                    conexion.Open();
-
-                    string queryValidar = "SELECT COUNT(*) FROM PRODUCTOS WHERE IDProducto = @IDProducto";
-                    using (SqlCommand cmdValidar = new SqlCommand(queryValidar, conexion))
+                    cmd.Parameters.AddWithValue("@id", txtbIDProducto.Text.Trim());
+                    cmd.Parameters.AddWithValue("@nombre", txtbNombreProducto.Text.Trim());
+                    cmd.Parameters.AddWithValue("@descripcion", string.IsNullOrWhiteSpace(txtbDescripcionProducto.Text) ? (object)DBNull.Value : txtbDescripcionProducto.Text.Trim());
+                    cmd.Parameters.AddWithValue("@categoria", string.IsNullOrWhiteSpace(cmbCategoriaP.Text) ? "Otros" : cmbCategoriaP.Text);
+                    cmd.Parameters.AddWithValue("@precio", precioConvertido);
+                    cmd.Parameters.AddWithValue("@stock", stockConvertido);
+                    cmd.Parameters.AddWithValue("@nroDocProveedor", cmbProveedor.SelectedValue != null ? cmbProveedor.SelectedValue.ToString() : (object)DBNull.Value);
+                    try
                     {
-                        cmdValidar.Parameters.AddWithValue("@IDProducto", txtIDProducto.Text.Trim().ToUpper());
-                        int existe = (int)cmdValidar.ExecuteScalar();
-
-                        if (existe > 0)
-                        {
-                            MessageBox.Show("Error: El ID del producto ya se encuentra registrado en el sistema.", "Control de Duplicidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
+                        conexion.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("¡Producto registrado con éxito en el inventario!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ListarProductos();
+                        LimpiarProductos();
                     }
-                    string queryInsert = @"INSERT INTO PRODUCTOS (IDProducto, nomProd, descripcion, categoria, precio, stock, nroDocProveedor)  
-                                          VALUES (@IDProducto, @nomProd, @descripcion, @categoria, @precio, @stock, @nroDocProveedor)";
-
-                    using (SqlCommand cmdInsert = new SqlCommand(queryInsert, conexion))
+                    catch (Exception ex)
                     {
-                        cmdInsert.Parameters.AddWithValue("@IDProducto", txtIDProducto.Text.Trim().ToUpper());
-                        cmdInsert.Parameters.AddWithValue("@nomProd", txtNomProd.Text.Trim());
-                        cmdInsert.Parameters.AddWithValue("@descripcion", txtDescripcion.Text.Trim());
-
-                        // Si manejas un txtCategoria, lo mapeas aquí. Si no lo usas, mandamos un valor general o DBNull
-                        cmdInsert.Parameters.AddWithValue("@categoria", "General");
-
-                        cmdInsert.Parameters.AddWithValue("@precio", Convert.ToDecimal(txtPrecio.Text.Trim()));
-                        cmdInsert.Parameters.AddWithValue("@stock", Convert.ToInt32(txtStock.Text.Trim()));
-                        cmdInsert.Parameters.AddWithValue("@nroDocProveedor", cmbProveedor.SelectedValue.ToString());
-
-                        cmdInsert.ExecuteNonQuery();
+                        MessageBox.Show("Error al guardar el producto: " + ex.Message, "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-                    MessageBox.Show("¡Producto guardado exitosamente en La Shiliquita!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    ListarProductos(); // Refresca la tabla visual
-                    LimpiarCampos();   // Limpia los campos de texto
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al guardar el producto: " + ex.Message, "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-        private void LimpiarCampos()
+        private void LimpiarProductos()
         {
             txtbIDProducto.Clear();
             txtbNombreProducto.Clear();
@@ -152,12 +149,10 @@ namespace Gestor_LaShiliquita
 
             txtIDProducto.Focus();
         }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            LimpiarCampos();
+            LimpiarProductos();
         }
-
         private void CargarComboBoxProveedores()
         {
             using (SqlConnection conexion = new SqlConnection(conexionString))
@@ -165,7 +160,7 @@ namespace Gestor_LaShiliquita
                 try
                 {
                     conexion.Open();
-                    // Traemos el Nro de Documento (como ID único) y el Nombre de la Empresa
+                    
                     string query = "SELECT nroDocProveedor, nomEmpresa FROM PROVEEDOR";
 
                     SqlCommand cmd = new SqlCommand(query, conexion);
@@ -184,11 +179,6 @@ namespace Gestor_LaShiliquita
                                     "Error de Inicialización", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

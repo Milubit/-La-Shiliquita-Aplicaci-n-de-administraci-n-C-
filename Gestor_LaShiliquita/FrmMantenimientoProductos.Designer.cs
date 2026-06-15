@@ -57,6 +57,8 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.pRODUCTOSTableAdapter = new Gestor_LaShiliquita.LaShiliquitaBDDataSetTableAdapters.PRODUCTOSTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtCategoria = new System.Windows.Forms.Label();
+            this.cmbCategoriaP = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUCTOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laShiliquitaBDDataSet)).BeginInit();
@@ -86,7 +88,6 @@
             this.dgvProductos.RowHeadersWidth = 45;
             this.dgvProductos.Size = new System.Drawing.Size(499, 559);
             this.dgvProductos.TabIndex = 0;
-            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
             // iDProductoDataGridViewTextBoxColumn
             // 
@@ -166,7 +167,7 @@
             // txtNomProd
             // 
             this.txtNomProd.AutoSize = true;
-            this.txtNomProd.Location = new System.Drawing.Point(23, 81);
+            this.txtNomProd.Location = new System.Drawing.Point(23, 70);
             this.txtNomProd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtNomProd.Name = "txtNomProd";
             this.txtNomProd.Size = new System.Drawing.Size(60, 17);
@@ -176,7 +177,7 @@
             // txtPrecio
             // 
             this.txtPrecio.AutoSize = true;
-            this.txtPrecio.Location = new System.Drawing.Point(23, 206);
+            this.txtPrecio.Location = new System.Drawing.Point(23, 177);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(47, 17);
@@ -186,7 +187,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.AutoSize = true;
-            this.txtDescripcion.Location = new System.Drawing.Point(23, 145);
+            this.txtDescripcion.Location = new System.Drawing.Point(23, 122);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(79, 17);
@@ -196,7 +197,7 @@
             // txtStock
             // 
             this.txtStock.AutoSize = true;
-            this.txtStock.Location = new System.Drawing.Point(23, 269);
+            this.txtStock.Location = new System.Drawing.Point(23, 232);
             this.txtStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(42, 17);
@@ -205,8 +206,9 @@
             // 
             // cmbProveedor
             // 
+            this.cmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProveedor.FormattingEnabled = true;
-            this.cmbProveedor.Location = new System.Drawing.Point(26, 353);
+            this.cmbProveedor.Location = new System.Drawing.Point(26, 379);
             this.cmbProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(245, 23);
@@ -215,7 +217,7 @@
             // txtProveedor
             // 
             this.txtProveedor.AutoSize = true;
-            this.txtProveedor.Location = new System.Drawing.Point(23, 334);
+            this.txtProveedor.Location = new System.Drawing.Point(23, 360);
             this.txtProveedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtProveedor.Name = "txtProveedor";
             this.txtProveedor.Size = new System.Drawing.Size(137, 17);
@@ -232,7 +234,7 @@
             // 
             // txtbNombreProducto
             // 
-            this.txtbNombreProducto.Location = new System.Drawing.Point(26, 100);
+            this.txtbNombreProducto.Location = new System.Drawing.Point(26, 89);
             this.txtbNombreProducto.Margin = new System.Windows.Forms.Padding(4);
             this.txtbNombreProducto.Name = "txtbNombreProducto";
             this.txtbNombreProducto.Size = new System.Drawing.Size(245, 24);
@@ -240,7 +242,7 @@
             // 
             // txtbDescripcionProducto
             // 
-            this.txtbDescripcionProducto.Location = new System.Drawing.Point(26, 163);
+            this.txtbDescripcionProducto.Location = new System.Drawing.Point(26, 140);
             this.txtbDescripcionProducto.Margin = new System.Windows.Forms.Padding(4);
             this.txtbDescripcionProducto.Name = "txtbDescripcionProducto";
             this.txtbDescripcionProducto.Size = new System.Drawing.Size(245, 24);
@@ -248,7 +250,7 @@
             // 
             // txtbPrecioProducto
             // 
-            this.txtbPrecioProducto.Location = new System.Drawing.Point(26, 225);
+            this.txtbPrecioProducto.Location = new System.Drawing.Point(26, 196);
             this.txtbPrecioProducto.Margin = new System.Windows.Forms.Padding(4);
             this.txtbPrecioProducto.Name = "txtbPrecioProducto";
             this.txtbPrecioProducto.Size = new System.Drawing.Size(245, 24);
@@ -256,7 +258,7 @@
             // 
             // txtbStockProducto
             // 
-            this.txtbStockProducto.Location = new System.Drawing.Point(26, 287);
+            this.txtbStockProducto.Location = new System.Drawing.Point(26, 250);
             this.txtbStockProducto.Margin = new System.Windows.Forms.Padding(4);
             this.txtbStockProducto.Name = "txtbStockProducto";
             this.txtbStockProducto.Size = new System.Drawing.Size(245, 24);
@@ -264,7 +266,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(146, 400);
+            this.btnGuardar.Location = new System.Drawing.Point(150, 432);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(88, 26);
@@ -275,7 +277,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(146, 491);
+            this.btnEliminar.Location = new System.Drawing.Point(150, 500);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(88, 26);
@@ -285,7 +287,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(146, 444);
+            this.btnLimpiar.Location = new System.Drawing.Point(150, 466);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(88, 26);
@@ -301,18 +303,39 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(40, 400);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 420);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(83, 117);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
+            // txtCategoria
+            // 
+            this.txtCategoria.AutoSize = true;
+            this.txtCategoria.Location = new System.Drawing.Point(23, 293);
+            this.txtCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(74, 17);
+            this.txtCategoria.TabIndex = 18;
+            this.txtCategoria.Text = "Categorias:";
+            // 
+            // cmbCategoriaP
+            // 
+            this.cmbCategoriaP.FormattingEnabled = true;
+            this.cmbCategoriaP.Location = new System.Drawing.Point(26, 312);
+            this.cmbCategoriaP.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbCategoriaP.Name = "cmbCategoriaP";
+            this.cmbCategoriaP.Size = new System.Drawing.Size(245, 23);
+            this.cmbCategoriaP.TabIndex = 17;
+            // 
             // FrmMantenimientoProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 559);
+            this.Controls.Add(this.txtCategoria);
+            this.Controls.Add(this.cmbCategoriaP);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
@@ -373,5 +396,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroDocProveedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label txtCategoria;
+        private System.Windows.Forms.ComboBox cmbCategoriaP;
     }
 }

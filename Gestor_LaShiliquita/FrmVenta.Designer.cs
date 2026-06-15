@@ -68,7 +68,6 @@
             this.txtbIDBoleta.Name = "txtbIDBoleta";
             this.txtbIDBoleta.Size = new System.Drawing.Size(208, 23);
             this.txtbIDBoleta.TabIndex = 0;
-            this.txtbIDBoleta.TextChanged += new System.EventHandler(this.txtbIDBoleta_TextChanged);
             // 
             // txtIDBoleta
             // 

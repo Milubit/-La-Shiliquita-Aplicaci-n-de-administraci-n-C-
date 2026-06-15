@@ -123,10 +123,10 @@ namespace Gestor_LaShiliquita
                 try
                 {
                     conexion.Open();
-                    string query = "SELECT nroDocE, tipoDoc, primerNom, apellidoP, apellidoM, cargo, Telefono FROM EMPLEADO";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
+                    string query = "SELECT nroDocE, tipoDoc, primerNom, apellidoP, apellidoM, nroContacto, fechaContrato, cargo, salarioMen FROM EMPLEADO";
+                    SqlDataAdapter da = new SqlDataAdapter(query, conexion);
                     DataTable dt = new DataTable();
-                    adapter.Fill(dt);
+                    da.Fill(dt);
                     dgvEmpleados.DataSource = dt;
                 }
                 catch (Exception ex)
@@ -404,7 +404,13 @@ namespace Gestor_LaShiliquita
                 }
             }
         }
+
         private void cmbCargoE_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabEmpleados_Click(object sender, EventArgs e)
         {
 
         }

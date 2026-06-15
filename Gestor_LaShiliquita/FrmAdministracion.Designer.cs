@@ -68,6 +68,7 @@
             this.pROVEEDORBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.laShiliquitaBDDataSet = new Gestor_LaShiliquita.LaShiliquitaBDDataSet();
             this.tabEmpleados = new System.Windows.Forms.TabPage();
+            this.cmbCargoE = new System.Windows.Forms.ComboBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnLimpiarPersonal = new System.Windows.Forms.Button();
@@ -124,7 +125,6 @@
             this.pROVEEDORTableAdapter = new Gestor_LaShiliquita.LaShiliquitaBDDataSetTableAdapters.PROVEEDORTableAdapter();
             this.eMPLEADOTableAdapter = new Gestor_LaShiliquita.LaShiliquitaBDDataSetTableAdapters.EMPLEADOTableAdapter();
             this.cLIENTESTableAdapter = new Gestor_LaShiliquita.LaShiliquitaBDDataSetTableAdapters.CLIENTESTableAdapter();
-            this.cmbCargoE = new System.Windows.Forms.ComboBox();
             this.TabControl.SuspendLayout();
             this.tabProveedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -552,6 +552,16 @@
             this.tabEmpleados.TabIndex = 0;
             this.tabEmpleados.Text = "Empleados";
             this.tabEmpleados.UseVisualStyleBackColor = true;
+            this.tabEmpleados.Click += new System.EventHandler(this.tabEmpleados_Click);
+            // 
+            // cmbCargoE
+            // 
+            this.cmbCargoE.FormattingEnabled = true;
+            this.cmbCargoE.Location = new System.Drawing.Point(38, 351);
+            this.cmbCargoE.Name = "cmbCargoE";
+            this.cmbCargoE.Size = new System.Drawing.Size(216, 28);
+            this.cmbCargoE.TabIndex = 77;
+            this.cmbCargoE.SelectedIndexChanged += new System.EventHandler(this.cmbCargoE_SelectedIndexChanged);
             // 
             // pictureBox3
             // 
@@ -1164,15 +1174,6 @@
             // cLIENTESTableAdapter
             // 
             this.cLIENTESTableAdapter.ClearBeforeFill = true;
-            // 
-            // cmbCargoE
-            // 
-            this.cmbCargoE.FormattingEnabled = true;
-            this.cmbCargoE.Location = new System.Drawing.Point(38, 351);
-            this.cmbCargoE.Name = "cmbCargoE";
-            this.cmbCargoE.Size = new System.Drawing.Size(216, 28);
-            this.cmbCargoE.TabIndex = 77;
-            this.cmbCargoE.SelectedIndexChanged += new System.EventHandler(this.cmbCargoE_SelectedIndexChanged);
             // 
             // FrmAdministracion
             // 
