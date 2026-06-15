@@ -26,12 +26,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtbIDBoleta = new System.Windows.Forms.TextBox();
-            this.txtIDBoleta = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtNumDocCliente = new System.Windows.Forms.Label();
-            this.txtbNumDocCliente = new System.Windows.Forms.TextBox();
             this.txtDniEmpleado = new System.Windows.Forms.Label();
-            this.txtbDniEmpleado = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.Label();
             this.txtbCantidad = new System.Windows.Forms.TextBox();
             this.txtIDProducto = new System.Windows.Forms.Label();
@@ -40,6 +37,8 @@
             this.txtTitulo1 = new System.Windows.Forms.Label();
             this.txtTitulo2 = new System.Windows.Forms.Label();
             this.PanelVenta = new System.Windows.Forms.Panel();
+            this.cbxNumE = new System.Windows.Forms.ComboBox();
+            this.cbxNumC = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTerminarVenta = new System.Windows.Forms.Button();
             this.dgvDetalle = new System.Windows.Forms.DataGridView();
@@ -61,59 +60,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.laShiliquitaBDDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtbIDBoleta
-            // 
-            this.txtbIDBoleta.Location = new System.Drawing.Point(22, 53);
-            this.txtbIDBoleta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtbIDBoleta.Name = "txtbIDBoleta";
-            this.txtbIDBoleta.Size = new System.Drawing.Size(208, 23);
-            this.txtbIDBoleta.TabIndex = 0;
-            // 
-            // txtIDBoleta
-            // 
-            this.txtIDBoleta.AutoSize = true;
-            this.txtIDBoleta.Location = new System.Drawing.Point(19, 35);
-            this.txtIDBoleta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtIDBoleta.Name = "txtIDBoleta";
-            this.txtIDBoleta.Size = new System.Drawing.Size(119, 17);
-            this.txtIDBoleta.TabIndex = 1;
-            this.txtIDBoleta.Text = "Numero de boleta:";
-            // 
             // txtNumDocCliente
             // 
             this.txtNumDocCliente.AutoSize = true;
-            this.txtNumDocCliente.Location = new System.Drawing.Point(19, 85);
+            this.txtNumDocCliente.Location = new System.Drawing.Point(19, 31);
             this.txtNumDocCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtNumDocCliente.Name = "txtNumDocCliente";
             this.txtNumDocCliente.Size = new System.Drawing.Size(119, 17);
             this.txtNumDocCliente.TabIndex = 3;
             this.txtNumDocCliente.Text = "Numero de cliente:";
             // 
-            // txtbNumDocCliente
-            // 
-            this.txtbNumDocCliente.Location = new System.Drawing.Point(22, 103);
-            this.txtbNumDocCliente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtbNumDocCliente.Name = "txtbNumDocCliente";
-            this.txtbNumDocCliente.Size = new System.Drawing.Size(208, 23);
-            this.txtbNumDocCliente.TabIndex = 2;
-            // 
             // txtDniEmpleado
             // 
             this.txtDniEmpleado.AutoSize = true;
-            this.txtDniEmpleado.Location = new System.Drawing.Point(19, 138);
+            this.txtDniEmpleado.Location = new System.Drawing.Point(19, 84);
             this.txtDniEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtDniEmpleado.Name = "txtDniEmpleado";
             this.txtDniEmpleado.Size = new System.Drawing.Size(230, 17);
             this.txtDniEmpleado.TabIndex = 5;
             this.txtDniEmpleado.Text = "Numero de documento de empleado:";
-            // 
-            // txtbDniEmpleado
-            // 
-            this.txtbDniEmpleado.Location = new System.Drawing.Point(22, 157);
-            this.txtbDniEmpleado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtbDniEmpleado.Name = "txtbDniEmpleado";
-            this.txtbDniEmpleado.Size = new System.Drawing.Size(208, 23);
-            this.txtbDniEmpleado.TabIndex = 4;
             // 
             // txtCantidad
             // 
@@ -153,10 +118,10 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(649, 18);
+            this.btnAgregar.Location = new System.Drawing.Point(645, 27);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(88, 27);
+            this.btnAgregar.Size = new System.Drawing.Size(94, 37);
             this.btnAgregar.TabIndex = 10;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -186,18 +151,36 @@
             // PanelVenta
             // 
             this.PanelVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(245)))), ((int)(((byte)(240)))));
+            this.PanelVenta.Controls.Add(this.cbxNumE);
+            this.PanelVenta.Controls.Add(this.cbxNumC);
             this.PanelVenta.Controls.Add(this.txtTitulo1);
             this.PanelVenta.Controls.Add(this.txtDniEmpleado);
-            this.PanelVenta.Controls.Add(this.txtbDniEmpleado);
             this.PanelVenta.Controls.Add(this.txtNumDocCliente);
-            this.PanelVenta.Controls.Add(this.txtbNumDocCliente);
-            this.PanelVenta.Controls.Add(this.txtIDBoleta);
-            this.PanelVenta.Controls.Add(this.txtbIDBoleta);
             this.PanelVenta.Location = new System.Drawing.Point(14, 14);
             this.PanelVenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PanelVenta.Name = "PanelVenta";
             this.PanelVenta.Size = new System.Drawing.Size(272, 205);
             this.PanelVenta.TabIndex = 13;
+            // 
+            // cbxNumE
+            // 
+            this.cbxNumE.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxNumE.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxNumE.FormattingEnabled = true;
+            this.cbxNumE.Location = new System.Drawing.Point(22, 118);
+            this.cbxNumE.Name = "cbxNumE";
+            this.cbxNumE.Size = new System.Drawing.Size(227, 23);
+            this.cbxNumE.TabIndex = 13;
+            // 
+            // cbxNumC
+            // 
+            this.cbxNumC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxNumC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxNumC.FormattingEnabled = true;
+            this.cbxNumC.Location = new System.Drawing.Point(22, 55);
+            this.cbxNumC.Name = "cbxNumC";
+            this.cbxNumC.Size = new System.Drawing.Size(227, 23);
+            this.cbxNumC.TabIndex = 12;
             // 
             // panel1
             // 
@@ -215,10 +198,10 @@
             // 
             // btnTerminarVenta
             // 
-            this.btnTerminarVenta.Location = new System.Drawing.Point(649, 89);
+            this.btnTerminarVenta.Location = new System.Drawing.Point(645, 98);
             this.btnTerminarVenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTerminarVenta.Name = "btnTerminarVenta";
-            this.btnTerminarVenta.Size = new System.Drawing.Size(88, 27);
+            this.btnTerminarVenta.Size = new System.Drawing.Size(94, 37);
             this.btnTerminarVenta.TabIndex = 13;
             this.btnTerminarVenta.Text = "Comprar";
             this.btnTerminarVenta.UseVisualStyleBackColor = true;
@@ -227,9 +210,18 @@
             // dgvDetalle
             // 
             this.dgvDetalle.AutoGenerateColumns = false;
-            this.dgvDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(245)))), ((int)(((byte)(240)))));
+            this.dgvDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(225)))), ((int)(((byte)(210)))));
             this.dgvDetalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDetalle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDetalle.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(34)))), ((int)(((byte)(23)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDBoletaDataGridViewTextBoxColumn,
@@ -241,6 +233,7 @@
             this.dgvDetalle.Location = new System.Drawing.Point(0, 243);
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.RowHeadersWidth = 45;
+            this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalle.Size = new System.Drawing.Size(801, 357);
             this.dgvDetalle.TabIndex = 15;
             // 
@@ -358,13 +351,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtbIDBoleta;
-        private System.Windows.Forms.Label txtIDBoleta;
         private System.Windows.Forms.Label txtNumDocCliente;
-        private System.Windows.Forms.TextBox txtbNumDocCliente;
         private System.Windows.Forms.Label txtDniEmpleado;
-        private System.Windows.Forms.TextBox txtbDniEmpleado;
         private System.Windows.Forms.Label txtCantidad;
         private System.Windows.Forms.TextBox txtbCantidad;
         private System.Windows.Forms.Label txtIDProducto;
@@ -387,5 +375,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantVendidaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxNumE;
+        private System.Windows.Forms.ComboBox cbxNumC;
     }
 }

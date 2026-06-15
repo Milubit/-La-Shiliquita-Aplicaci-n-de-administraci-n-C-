@@ -180,5 +180,10 @@ namespace Gestor_LaShiliquita
                 }
             }
         }
+
+        private void FrmMantenimientoProductos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace Gestor_LaShiliquita
 
         private DataTable tablaCarrito;
         private decimal totalAcumulado = 0;
+        private string numeroBoletaActual = "";
         public FrmVenta()
         {
             InitializeComponent();
@@ -43,8 +44,6 @@ namespace Gestor_LaShiliquita
                 return;
             }
             string idBuscar = txtbIDProducto.Text.Trim().ToUpper();
-            string nroBoleta = txtbIDBoleta.Text.Trim();
-
             string query = "SELECT IDProducto, nomProd, precio FROM PRODUCTOS WHERE RTRIM(IDProducto) = @id";
             
             using (SqlConnection conexion = new SqlConnection(conexionString)) 
@@ -68,7 +67,7 @@ namespace Gestor_LaShiliquita
                                 return;
                             }
 
-                            tablaCarrito.Rows.Add(nroBoleta, idBuscar, nombreProducto, precioUnitario, cantidadVendida);
+                            tablaCarrito.Rows.Add(idBuscar, nombreProducto, precioUnitario, cantidadVendida);
                             CalcularTotal();
 
                             txtbIDProducto.Clear();
@@ -87,6 +86,44 @@ namespace Gestor_LaShiliquita
                 }
             }
         }
+        private void CargarAutocompletados()
+        {
+            using (SqlConnection conexion = new SqlConnection(conexionString))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    string queryClientes = "SELECT nroDocC FROM CLIENTE"; 
+                    using (SqlCommand cmd = new SqlCommand(queryClientes, conexion))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cbxNumC.Items.Add(reader["nroDocC"].ToString());
+                            }
+                        }
+                    }
+
+                    string queryEmpleados = "SELECT nroDocE FROM EMPLEADO"; 
+                    using (SqlCommand cmd = new SqlCommand(queryEmpleados, conexion))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cbxNumE.Items.Add(reader["nroDocE"].ToString());
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar los datos de autocompletado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         private void GenerarNumeroBoleta()
         {
             string query = "SELECT MAX(IDBoleta) FROM BOLETA";
@@ -102,17 +139,16 @@ namespace Gestor_LaShiliquita
 
                         if (resultado == null || resultado == DBNull.Value)
                         {
-                            txtbIDBoleta.Text = "B0001";
+                            numeroBoletaActual = "B0001";
                         }
                         else
                         {
                             string ultimoCodigo = resultado.ToString(); 
                             int numero = int.Parse(ultimoCodigo.Substring(1));
-                            numero++; 
+                            numero++;
 
-                            txtbIDBoleta.Text = "B" + numero.ToString("D3");
+                            numeroBoletaActual = "B" + numero.ToString("D4"); 
                         }
-                        txtbIDBoleta.ReadOnly = true;
                     }
                     catch (Exception ex)
                     {
@@ -137,7 +173,7 @@ namespace Gestor_LaShiliquita
                 MessageBox.Show("El carrito está vacío. Añada al menos un producto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtbIDBoleta.Text) || string.IsNullOrWhiteSpace(txtbNumDocCliente.Text) || string.IsNullOrWhiteSpace(txtbDniEmpleado.Text))
+            if (string.IsNullOrWhiteSpace(cbxNumC.Text) || string.IsNullOrWhiteSpace(cbxNumE.Text) || string.IsNullOrWhiteSpace(cbxNumE.Text))
             {
                 MessageBox.Show("Complete todos los campos de la cabecera (Boleta, Cliente y Empleado).", "Datos Incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -152,33 +188,25 @@ namespace Gestor_LaShiliquita
                     {
                         try
                         {
-                            string queryValidar = "SELECT COUNT(*) FROM BOLETA WHERE IDBoleta = @IDBoleta";
-                            using (SqlCommand cmdV = new SqlCommand(queryValidar, conexion, transaccion))
-                            {
-                                cmdV.Parameters.AddWithValue("@IDBoleta", txtbIDBoleta.Text.Trim().ToUpper());
-                                if ((int)cmdV.ExecuteScalar() > 0)
-                                {
-                                    transaccion.Rollback();
-                                    MessageBox.Show("El ID de Boleta ya existe. Genere uno nuevo.", "Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    return;
-                                }
-                            }
-                            string queryBoleta = "INSERT INTO BOLETA (IDBoleta, Fecha_hora, Total, nroDocC, nroDocE) VALUES (@IDBoleta, @Fecha, @Total, @Cliente, @Empleado)";
+                            string idBoletaGenerado = "";
+                            string queryBoleta = "INSERT INTO BOLETA (Fecha_hora, Total, nroDocC, nroDocE) " + "OUTPUT INSERTED.IDBoleta " + "VALUES (@Fecha, @Total, @Cliente, @Empleado)";
+
                             using (SqlCommand cmdB = new SqlCommand(queryBoleta, conexion, transaccion))
                             {
-                                cmdB.Parameters.AddWithValue("@IDBoleta", txtbIDBoleta.Text.Trim().ToUpper());
                                 cmdB.Parameters.AddWithValue("@Fecha", DateTime.Now);
                                 cmdB.Parameters.AddWithValue("@Total", totalAcumulado);
-                                cmdB.Parameters.AddWithValue("@Cliente", txtbNumDocCliente.Text.Trim());
-                                cmdB.Parameters.AddWithValue("@Empleado", txtbDniEmpleado.Text.Trim());
-                                cmdB.ExecuteNonQuery();
+                                cmdB.Parameters.AddWithValue("@Cliente", cbxNumC.Text.Trim());
+                                cmdB.Parameters.AddWithValue("@Empleado", cbxNumE.Text.Trim());
+
+                                idBoletaGenerado = cmdB.ExecuteScalar()?.ToString();
                             }
+
                             foreach (DataRow fila in tablaCarrito.Rows)
                             {
-                                string queryDetalle = "INSERT INTO DETALLE_BOLETA (IDBoleta, IDProducto, nomProd, precioUnit, cantVendida) VALUES (@IdB, @IdP, @Nom, @Precio, @Cant)";
+                                string queryDetalle = "INSERT INTO DETALLE_BOLETA (IDBoleta, IDProducto, nomProd, precioUnit, cantVendida) " + "VALUES (@IdB, @IdP, @Nom, @Precio, @Cant)";
                                 using (SqlCommand cmdD = new SqlCommand(queryDetalle, conexion, transaccion))
                                 {
-                                    cmdD.Parameters.AddWithValue("@IdB", txtbIDBoleta.Text.Trim().ToUpper());
+                                    cmdD.Parameters.AddWithValue("@IdB", idBoletaGenerado);
                                     cmdD.Parameters.AddWithValue("@IdP", fila["IDProducto"]);
                                     cmdD.Parameters.AddWithValue("@Nom", fila["nomProd"]);
                                     cmdD.Parameters.AddWithValue("@Precio", fila["precioUnit"]);
@@ -186,6 +214,7 @@ namespace Gestor_LaShiliquita
 
                                     cmdD.ExecuteNonQuery();
                                 }
+
                                 string queryStock = "UPDATE PRODUCTOS SET Stock = Stock - @CantStock WHERE IDProducto = @IdPStock";
                                 using (SqlCommand cmdS = new SqlCommand(queryStock, conexion, transaccion))
                                 {
@@ -194,10 +223,9 @@ namespace Gestor_LaShiliquita
 
                                     cmdS.ExecuteNonQuery();
                                 }
-
-                                transaccion.Commit();
-                                MessageBox.Show("¡Venta registrada con éxito en La Shiliquita!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
+                           transaccion.Commit();
+                            MessageBox.Show("¡Venta registrada con éxito en La Shiliquita!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception ex)
                         {
@@ -216,15 +244,16 @@ namespace Gestor_LaShiliquita
         private void LimpiarFormularioVenta()
         {
             GenerarNumeroBoleta();
-
-            txtbNumDocCliente.Clear();
-            txtbDniEmpleado.Clear();
-            txtbIDProducto.Clear();
+            cbxNumC.SelectedIndex = -1; 
+            cbxNumE.SelectedIndex = -1;
 
             txtbCantidad.Text = "1";
             tablaCarrito.Rows.Clear();
             lblTotal.Text = "S/. 0.00";
             totalAcumulado = 0;
+
+            txtbIDProducto.Focus();
         }
+
     }
 }

@@ -414,5 +414,10 @@ namespace Gestor_LaShiliquita
         {
 
         }
+
+        private void tabProveedores_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

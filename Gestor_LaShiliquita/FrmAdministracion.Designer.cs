@@ -181,6 +181,7 @@
             this.tabProveedores.Controls.Add(this.txtbContacto1P);
             this.tabProveedores.Controls.Add(this.txtTipoDocP);
             this.tabProveedores.Controls.Add(this.dgvProveedores);
+            this.tabProveedores.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabProveedores.Location = new System.Drawing.Point(4, 29);
             this.tabProveedores.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabProveedores.Name = "tabProveedores";
@@ -189,6 +190,7 @@
             this.tabProveedores.TabIndex = 1;
             this.tabProveedores.Text = "Proveedores";
             this.tabProveedores.UseVisualStyleBackColor = true;
+            this.tabProveedores.Click += new System.EventHandler(this.tabProveedores_Click);
             // 
             // pictureBox6
             // 
@@ -242,12 +244,12 @@
             this.txtContacto2P.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtContacto2P.AutoSize = true;
-            this.txtContacto2P.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtContacto2P.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContacto2P.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
-            this.txtContacto2P.Location = new System.Drawing.Point(20, 281);
+            this.txtContacto2P.Location = new System.Drawing.Point(20, 301);
             this.txtContacto2P.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtContacto2P.Name = "txtContacto2P";
-            this.txtContacto2P.Size = new System.Drawing.Size(194, 17);
+            this.txtContacto2P.Size = new System.Drawing.Size(183, 17);
             this.txtContacto2P.TabIndex = 61;
             this.txtContacto2P.Text = "Ingrese otro numero (opcional):";
             // 
@@ -256,23 +258,22 @@
             this.txtDireccionP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtDireccionP.AutoSize = true;
-            this.txtDireccionP.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtDireccionP.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccionP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
-            this.txtDireccionP.Location = new System.Drawing.Point(20, 182);
+            this.txtDireccionP.Location = new System.Drawing.Point(20, 200);
             this.txtDireccionP.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtDireccionP.Name = "txtDireccionP";
-            this.txtDireccionP.Size = new System.Drawing.Size(65, 17);
+            this.txtDireccionP.Size = new System.Drawing.Size(63, 17);
             this.txtDireccionP.TabIndex = 58;
             this.txtDireccionP.Text = "Direccion:";
             // 
             // txtbDireccionP
             // 
-            this.txtbDireccionP.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
             this.txtbDireccionP.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtbDireccionP.Location = new System.Drawing.Point(40, 203);
+            this.txtbDireccionP.Location = new System.Drawing.Point(40, 221);
             this.txtbDireccionP.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtbDireccionP.Name = "txtbDireccionP";
-            this.txtbDireccionP.Size = new System.Drawing.Size(211, 24);
+            this.txtbDireccionP.Size = new System.Drawing.Size(211, 27);
             this.txtbDireccionP.TabIndex = 57;
             // 
             // txtgmailP
@@ -280,36 +281,34 @@
             this.txtgmailP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtgmailP.AutoSize = true;
-            this.txtgmailP.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtgmailP.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtgmailP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
-            this.txtgmailP.Location = new System.Drawing.Point(20, 327);
+            this.txtgmailP.Location = new System.Drawing.Point(20, 351);
             this.txtgmailP.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtgmailP.Name = "txtgmailP";
-            this.txtgmailP.Size = new System.Drawing.Size(52, 17);
+            this.txtgmailP.Size = new System.Drawing.Size(49, 17);
             this.txtgmailP.TabIndex = 56;
             this.txtgmailP.Text = "Correo:";
             // 
             // txtbgmailP
             // 
-            this.txtbgmailP.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
             this.txtbgmailP.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtbgmailP.Location = new System.Drawing.Point(40, 347);
+            this.txtbgmailP.Location = new System.Drawing.Point(40, 371);
             this.txtbgmailP.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtbgmailP.Name = "txtbgmailP";
-            this.txtbgmailP.Size = new System.Drawing.Size(211, 24);
+            this.txtbgmailP.Size = new System.Drawing.Size(211, 27);
             this.txtbgmailP.TabIndex = 55;
             // 
             // cmbTipoDocProv
             // 
             this.cmbTipoDocProv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.cmbTipoDocProv.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
             this.cmbTipoDocProv.FormattingEnabled = true;
             this.cmbTipoDocProv.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cmbTipoDocProv.Location = new System.Drawing.Point(40, 59);
+            this.cmbTipoDocProv.Location = new System.Drawing.Point(40, 71);
             this.cmbTipoDocProv.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbTipoDocProv.Name = "cmbTipoDocProv";
-            this.cmbTipoDocProv.Size = new System.Drawing.Size(211, 23);
+            this.cmbTipoDocProv.Size = new System.Drawing.Size(211, 28);
             this.cmbTipoDocProv.TabIndex = 54;
             // 
             // txtNombreEmpP
@@ -317,23 +316,22 @@
             this.txtNombreEmpP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtNombreEmpP.AutoSize = true;
-            this.txtNombreEmpP.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtNombreEmpP.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreEmpP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
-            this.txtNombreEmpP.Location = new System.Drawing.Point(20, 136);
+            this.txtNombreEmpP.Location = new System.Drawing.Point(20, 152);
             this.txtNombreEmpP.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtNombreEmpP.Name = "txtNombreEmpP";
-            this.txtNombreEmpP.Size = new System.Drawing.Size(134, 17);
+            this.txtNombreEmpP.Size = new System.Drawing.Size(125, 17);
             this.txtNombreEmpP.TabIndex = 53;
             this.txtNombreEmpP.Text = "Nombre de empresa:";
             // 
             // txtbNombreEmpP
             // 
-            this.txtbNombreEmpP.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
             this.txtbNombreEmpP.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtbNombreEmpP.Location = new System.Drawing.Point(40, 156);
+            this.txtbNombreEmpP.Location = new System.Drawing.Point(40, 172);
             this.txtbNombreEmpP.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtbNombreEmpP.Name = "txtbNombreEmpP";
-            this.txtbNombreEmpP.Size = new System.Drawing.Size(211, 24);
+            this.txtbNombreEmpP.Size = new System.Drawing.Size(211, 27);
             this.txtbNombreEmpP.TabIndex = 52;
             // 
             // label12
@@ -347,12 +345,11 @@
             // 
             // txtbContacto2P
             // 
-            this.txtbContacto2P.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
             this.txtbContacto2P.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtbContacto2P.Location = new System.Drawing.Point(40, 301);
+            this.txtbContacto2P.Location = new System.Drawing.Point(40, 321);
             this.txtbContacto2P.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtbContacto2P.Name = "txtbContacto2P";
-            this.txtbContacto2P.Size = new System.Drawing.Size(211, 24);
+            this.txtbContacto2P.Size = new System.Drawing.Size(211, 27);
             this.txtbContacto2P.TabIndex = 50;
             // 
             // txtNroDocP
@@ -360,23 +357,22 @@
             this.txtNroDocP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtNroDocP.AutoSize = true;
-            this.txtNroDocP.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtNroDocP.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroDocP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
-            this.txtNroDocP.Location = new System.Drawing.Point(20, 89);
+            this.txtNroDocP.Location = new System.Drawing.Point(20, 102);
             this.txtNroDocP.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtNroDocP.Name = "txtNroDocP";
-            this.txtNroDocP.Size = new System.Drawing.Size(148, 17);
+            this.txtNroDocP.Size = new System.Drawing.Size(140, 17);
             this.txtNroDocP.TabIndex = 49;
             this.txtNroDocP.Text = "Numero de documento:";
             // 
             // txtbNroDocP
             // 
-            this.txtbNroDocP.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
             this.txtbNroDocP.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtbNroDocP.Location = new System.Drawing.Point(40, 109);
+            this.txtbNroDocP.Location = new System.Drawing.Point(40, 122);
             this.txtbNroDocP.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtbNroDocP.Name = "txtbNroDocP";
-            this.txtbNroDocP.Size = new System.Drawing.Size(211, 24);
+            this.txtbNroDocP.Size = new System.Drawing.Size(211, 27);
             this.txtbNroDocP.TabIndex = 48;
             // 
             // txtContacto1P
@@ -384,23 +380,22 @@
             this.txtContacto1P.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtContacto1P.AutoSize = true;
-            this.txtContacto1P.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtContacto1P.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContacto1P.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
-            this.txtContacto1P.Location = new System.Drawing.Point(20, 233);
+            this.txtContacto1P.Location = new System.Drawing.Point(20, 251);
             this.txtContacto1P.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtContacto1P.Name = "txtContacto1P";
-            this.txtContacto1P.Size = new System.Drawing.Size(192, 17);
+            this.txtContacto1P.Size = new System.Drawing.Size(182, 17);
             this.txtContacto1P.TabIndex = 47;
             this.txtContacto1P.Text = "Escriba su numero de contacto:";
             // 
             // txtbContacto1P
             // 
-            this.txtbContacto1P.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
             this.txtbContacto1P.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtbContacto1P.Location = new System.Drawing.Point(40, 253);
+            this.txtbContacto1P.Location = new System.Drawing.Point(40, 271);
             this.txtbContacto1P.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtbContacto1P.Name = "txtbContacto1P";
-            this.txtbContacto1P.Size = new System.Drawing.Size(211, 24);
+            this.txtbContacto1P.Size = new System.Drawing.Size(211, 27);
             this.txtbContacto1P.TabIndex = 46;
             // 
             // txtTipoDocP
@@ -408,12 +403,12 @@
             this.txtTipoDocP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTipoDocP.AutoSize = true;
-            this.txtTipoDocP.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtTipoDocP.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipoDocP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
-            this.txtTipoDocP.Location = new System.Drawing.Point(19, 34);
+            this.txtTipoDocP.Location = new System.Drawing.Point(19, 46);
             this.txtTipoDocP.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtTipoDocP.Name = "txtTipoDocP";
-            this.txtTipoDocP.Size = new System.Drawing.Size(126, 17);
+            this.txtTipoDocP.Size = new System.Drawing.Size(118, 17);
             this.txtTipoDocP.TabIndex = 45;
             this.txtTipoDocP.Text = "Tipo de documento:";
             // 
@@ -425,7 +420,7 @@
             this.dgvProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(23)))), ((int)(((byte)(12)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -443,7 +438,7 @@
             this.dgvProveedores.DataSource = this.pROVEEDORBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(23)))), ((int)(((byte)(12)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -544,6 +539,7 @@
             this.tabEmpleados.Controls.Add(this.txtbNombreE);
             this.tabEmpleados.Controls.Add(this.txtTipoDocEmpleado);
             this.tabEmpleados.Controls.Add(this.dgvEmpleados);
+            this.tabEmpleados.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabEmpleados.Location = new System.Drawing.Point(4, 29);
             this.tabEmpleados.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabEmpleados.Name = "tabEmpleados";
@@ -597,22 +593,22 @@
             // txtTelefonoE
             // 
             this.txtTelefonoE.AutoSize = true;
-            this.txtTelefonoE.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtTelefonoE.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtTelefonoE.Location = new System.Drawing.Point(21, 283);
             this.txtTelefonoE.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtTelefonoE.Name = "txtTelefonoE";
-            this.txtTelefonoE.Size = new System.Drawing.Size(61, 17);
+            this.txtTelefonoE.Size = new System.Drawing.Size(58, 17);
             this.txtTelefonoE.TabIndex = 65;
             this.txtTelefonoE.Text = "Telefono:";
             // 
             // txtbTelefonoE
             // 
-            this.txtbTelefonoE.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtbTelefonoE.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbTelefonoE.Location = new System.Drawing.Point(40, 302);
             this.txtbTelefonoE.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtbTelefonoE.Name = "txtbTelefonoE";
-            this.txtbTelefonoE.Size = new System.Drawing.Size(216, 24);
+            this.txtbTelefonoE.Size = new System.Drawing.Size(216, 27);
             this.txtbTelefonoE.TabIndex = 64;
             // 
             // btnGuardarPersonal
@@ -630,34 +626,34 @@
             // txtCargoE
             // 
             this.txtCargoE.AutoSize = true;
-            this.txtCargoE.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtCargoE.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCargoE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtCargoE.Location = new System.Drawing.Point(19, 331);
             this.txtCargoE.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtCargoE.Name = "txtCargoE";
-            this.txtCargoE.Size = new System.Drawing.Size(47, 17);
+            this.txtCargoE.Size = new System.Drawing.Size(45, 17);
             this.txtCargoE.TabIndex = 42;
             this.txtCargoE.Text = "Cargo:";
             // 
             // txtApellidoME
             // 
             this.txtApellidoME.AutoSize = true;
-            this.txtApellidoME.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtApellidoME.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoME.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtApellidoME.Location = new System.Drawing.Point(19, 231);
             this.txtApellidoME.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtApellidoME.Name = "txtApellidoME";
-            this.txtApellidoME.Size = new System.Drawing.Size(123, 17);
+            this.txtApellidoME.Size = new System.Drawing.Size(115, 17);
             this.txtApellidoME.TabIndex = 40;
             this.txtApellidoME.Text = "Apellidos Materno: ";
             // 
             // txtbApellidoME
             // 
-            this.txtbApellidoME.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtbApellidoME.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbApellidoME.Location = new System.Drawing.Point(38, 249);
             this.txtbApellidoME.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtbApellidoME.Name = "txtbApellidoME";
-            this.txtbApellidoME.Size = new System.Drawing.Size(216, 24);
+            this.txtbApellidoME.Size = new System.Drawing.Size(216, 27);
             this.txtbApellidoME.TabIndex = 39;
             // 
             // cmbTipoDocE
@@ -673,75 +669,75 @@
             // txtApellidoPE
             // 
             this.txtApellidoPE.AutoSize = true;
-            this.txtApellidoPE.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtApellidoPE.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoPE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtApellidoPE.Location = new System.Drawing.Point(19, 179);
             this.txtApellidoPE.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtApellidoPE.Name = "txtApellidoPE";
-            this.txtApellidoPE.Size = new System.Drawing.Size(118, 17);
+            this.txtApellidoPE.Size = new System.Drawing.Size(111, 17);
             this.txtApellidoPE.TabIndex = 35;
             this.txtApellidoPE.Text = "Apellidos Paterno: ";
             // 
             // txtbApellidoPE
             // 
-            this.txtbApellidoPE.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtbApellidoPE.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbApellidoPE.Location = new System.Drawing.Point(38, 197);
             this.txtbApellidoPE.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtbApellidoPE.Name = "txtbApellidoPE";
-            this.txtbApellidoPE.Size = new System.Drawing.Size(216, 24);
+            this.txtbApellidoPE.Size = new System.Drawing.Size(216, 27);
             this.txtbApellidoPE.TabIndex = 34;
             // 
             // txtNroDocE
             // 
             this.txtNroDocE.AutoSize = true;
-            this.txtNroDocE.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtNroDocE.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroDocE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtNroDocE.Location = new System.Drawing.Point(19, 88);
             this.txtNroDocE.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtNroDocE.Name = "txtNroDocE";
-            this.txtNroDocE.Size = new System.Drawing.Size(148, 17);
+            this.txtNroDocE.Size = new System.Drawing.Size(140, 17);
             this.txtNroDocE.TabIndex = 33;
             this.txtNroDocE.Text = "Numero de documento:";
             // 
             // txtbNroDocE
             // 
-            this.txtbNroDocE.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtbNroDocE.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbNroDocE.Location = new System.Drawing.Point(38, 106);
             this.txtbNroDocE.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtbNroDocE.Name = "txtbNroDocE";
-            this.txtbNroDocE.Size = new System.Drawing.Size(216, 24);
+            this.txtbNroDocE.Size = new System.Drawing.Size(216, 27);
             this.txtbNroDocE.TabIndex = 32;
             // 
             // txtNombreE
             // 
             this.txtNombreE.AutoSize = true;
-            this.txtNombreE.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtNombreE.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtNombreE.Location = new System.Drawing.Point(19, 134);
             this.txtNombreE.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtNombreE.Name = "txtNombreE";
-            this.txtNombreE.Size = new System.Drawing.Size(66, 17);
+            this.txtNombreE.Size = new System.Drawing.Size(62, 17);
             this.txtNombreE.TabIndex = 31;
             this.txtNombreE.Text = "Nombres:";
             // 
             // txtbNombreE
             // 
-            this.txtbNombreE.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtbNombreE.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbNombreE.Location = new System.Drawing.Point(38, 152);
             this.txtbNombreE.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtbNombreE.Name = "txtbNombreE";
-            this.txtbNombreE.Size = new System.Drawing.Size(216, 24);
+            this.txtbNombreE.Size = new System.Drawing.Size(216, 27);
             this.txtbNombreE.TabIndex = 30;
             // 
             // txtTipoDocEmpleado
             // 
             this.txtTipoDocEmpleado.AutoSize = true;
-            this.txtTipoDocEmpleado.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtTipoDocEmpleado.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipoDocEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtTipoDocEmpleado.Location = new System.Drawing.Point(19, 39);
             this.txtTipoDocEmpleado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtTipoDocEmpleado.Name = "txtTipoDocEmpleado";
-            this.txtTipoDocEmpleado.Size = new System.Drawing.Size(126, 17);
+            this.txtTipoDocEmpleado.Size = new System.Drawing.Size(118, 17);
             this.txtTipoDocEmpleado.TabIndex = 29;
             this.txtTipoDocEmpleado.Text = "Tipo de documento:";
             // 
@@ -754,7 +750,7 @@
             this.dgvEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(23)))), ((int)(((byte)(12)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -774,7 +770,7 @@
             this.dgvEmpleados.DataSource = this.eMPLEADOBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(23)))), ((int)(((byte)(12)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -795,7 +791,7 @@
             this.nroDocEDataGridViewTextBoxColumn.HeaderText = "nroDocE";
             this.nroDocEDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nroDocEDataGridViewTextBoxColumn.Name = "nroDocEDataGridViewTextBoxColumn";
-            this.nroDocEDataGridViewTextBoxColumn.Width = 93;
+            this.nroDocEDataGridViewTextBoxColumn.Width = 90;
             // 
             // tipoDocDataGridViewTextBoxColumn1
             // 
@@ -803,7 +799,7 @@
             this.tipoDocDataGridViewTextBoxColumn1.HeaderText = "tipoDoc";
             this.tipoDocDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.tipoDocDataGridViewTextBoxColumn1.Name = "tipoDocDataGridViewTextBoxColumn1";
-            this.tipoDocDataGridViewTextBoxColumn1.Width = 90;
+            this.tipoDocDataGridViewTextBoxColumn1.Width = 87;
             // 
             // primerNomDataGridViewTextBoxColumn
             // 
@@ -811,7 +807,7 @@
             this.primerNomDataGridViewTextBoxColumn.HeaderText = "primerNom";
             this.primerNomDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.primerNomDataGridViewTextBoxColumn.Name = "primerNomDataGridViewTextBoxColumn";
-            this.primerNomDataGridViewTextBoxColumn.Width = 113;
+            this.primerNomDataGridViewTextBoxColumn.Width = 110;
             // 
             // apellidoPDataGridViewTextBoxColumn
             // 
@@ -819,7 +815,7 @@
             this.apellidoPDataGridViewTextBoxColumn.HeaderText = "apellidoP";
             this.apellidoPDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.apellidoPDataGridViewTextBoxColumn.Name = "apellidoPDataGridViewTextBoxColumn";
-            this.apellidoPDataGridViewTextBoxColumn.Width = 99;
+            this.apellidoPDataGridViewTextBoxColumn.Width = 96;
             // 
             // apellidoMDataGridViewTextBoxColumn
             // 
@@ -827,7 +823,7 @@
             this.apellidoMDataGridViewTextBoxColumn.HeaderText = "apellidoM";
             this.apellidoMDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.apellidoMDataGridViewTextBoxColumn.Name = "apellidoMDataGridViewTextBoxColumn";
-            this.apellidoMDataGridViewTextBoxColumn.Width = 104;
+            this.apellidoMDataGridViewTextBoxColumn.Width = 99;
             // 
             // nroContactoDataGridViewTextBoxColumn
             // 
@@ -835,7 +831,7 @@
             this.nroContactoDataGridViewTextBoxColumn.HeaderText = "nroContacto";
             this.nroContactoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nroContactoDataGridViewTextBoxColumn.Name = "nroContactoDataGridViewTextBoxColumn";
-            this.nroContactoDataGridViewTextBoxColumn.Width = 118;
+            this.nroContactoDataGridViewTextBoxColumn.Width = 116;
             // 
             // fechaContratoDataGridViewTextBoxColumn
             // 
@@ -843,7 +839,7 @@
             this.fechaContratoDataGridViewTextBoxColumn.HeaderText = "fechaContrato";
             this.fechaContratoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.fechaContratoDataGridViewTextBoxColumn.Name = "fechaContratoDataGridViewTextBoxColumn";
-            this.fechaContratoDataGridViewTextBoxColumn.Width = 130;
+            this.fechaContratoDataGridViewTextBoxColumn.Width = 127;
             // 
             // cargoDataGridViewTextBoxColumn
             // 
@@ -851,7 +847,7 @@
             this.cargoDataGridViewTextBoxColumn.HeaderText = "cargo";
             this.cargoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cargoDataGridViewTextBoxColumn.Name = "cargoDataGridViewTextBoxColumn";
-            this.cargoDataGridViewTextBoxColumn.Width = 74;
+            this.cargoDataGridViewTextBoxColumn.Width = 72;
             // 
             // salarioMenDataGridViewTextBoxColumn
             // 
@@ -859,7 +855,7 @@
             this.salarioMenDataGridViewTextBoxColumn.HeaderText = "salarioMen";
             this.salarioMenDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.salarioMenDataGridViewTextBoxColumn.Name = "salarioMenDataGridViewTextBoxColumn";
-            this.salarioMenDataGridViewTextBoxColumn.Width = 109;
+            this.salarioMenDataGridViewTextBoxColumn.Width = 106;
             // 
             // eMPLEADOBindingSource
             // 
@@ -885,6 +881,7 @@
             this.tabClientes.Controls.Add(this.txtbNombresClientes);
             this.tabClientes.Controls.Add(this.txtItipoDoc);
             this.tabClientes.Controls.Add(this.dgvClientes);
+            this.tabClientes.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabClientes.Location = new System.Drawing.Point(4, 29);
             this.tabClientes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabClientes.Name = "tabClientes";
@@ -946,12 +943,12 @@
             // txtApellidoMClientes
             // 
             this.txtApellidoMClientes.AutoSize = true;
-            this.txtApellidoMClientes.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtApellidoMClientes.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoMClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtApellidoMClientes.Location = new System.Drawing.Point(21, 236);
             this.txtApellidoMClientes.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtApellidoMClientes.Name = "txtApellidoMClientes";
-            this.txtApellidoMClientes.Size = new System.Drawing.Size(123, 17);
+            this.txtApellidoMClientes.Size = new System.Drawing.Size(115, 17);
             this.txtApellidoMClientes.TabIndex = 28;
             this.txtApellidoMClientes.Text = "Apellidos Materno: ";
             // 
@@ -978,12 +975,12 @@
             // txtDireccionCliente
             // 
             this.txtDireccionCliente.AutoSize = true;
-            this.txtDireccionCliente.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtDireccionCliente.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccionCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtDireccionCliente.Location = new System.Drawing.Point(21, 285);
             this.txtDireccionCliente.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtDireccionCliente.Name = "txtDireccionCliente";
-            this.txtDireccionCliente.Size = new System.Drawing.Size(65, 17);
+            this.txtDireccionCliente.Size = new System.Drawing.Size(63, 17);
             this.txtDireccionCliente.TabIndex = 23;
             this.txtDireccionCliente.Text = "Direccion:";
             // 
@@ -999,12 +996,12 @@
             // txtApellidoPClientes
             // 
             this.txtApellidoPClientes.AutoSize = true;
-            this.txtApellidoPClientes.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtApellidoPClientes.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoPClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtApellidoPClientes.Location = new System.Drawing.Point(21, 184);
             this.txtApellidoPClientes.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtApellidoPClientes.Name = "txtApellidoPClientes";
-            this.txtApellidoPClientes.Size = new System.Drawing.Size(118, 17);
+            this.txtApellidoPClientes.Size = new System.Drawing.Size(111, 17);
             this.txtApellidoPClientes.TabIndex = 21;
             this.txtApellidoPClientes.Text = "Apellidos Paterno: ";
             // 
@@ -1020,12 +1017,12 @@
             // txtNroDocC
             // 
             this.txtNroDocC.AutoSize = true;
-            this.txtNroDocC.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtNroDocC.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroDocC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtNroDocC.Location = new System.Drawing.Point(21, 77);
             this.txtNroDocC.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtNroDocC.Name = "txtNroDocC";
-            this.txtNroDocC.Size = new System.Drawing.Size(148, 17);
+            this.txtNroDocC.Size = new System.Drawing.Size(140, 17);
             this.txtNroDocC.TabIndex = 19;
             this.txtNroDocC.Text = "Numero de documento:";
             // 
@@ -1042,12 +1039,12 @@
             // txtNombresClientes
             // 
             this.txtNombresClientes.AutoSize = true;
-            this.txtNombresClientes.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtNombresClientes.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombresClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtNombresClientes.Location = new System.Drawing.Point(21, 127);
             this.txtNombresClientes.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtNombresClientes.Name = "txtNombresClientes";
-            this.txtNombresClientes.Size = new System.Drawing.Size(66, 17);
+            this.txtNombresClientes.Size = new System.Drawing.Size(62, 17);
             this.txtNombresClientes.TabIndex = 15;
             this.txtNombresClientes.Text = "Nombres:";
             // 
@@ -1063,12 +1060,12 @@
             // txtItipoDoc
             // 
             this.txtItipoDoc.AutoSize = true;
-            this.txtItipoDoc.Font = new System.Drawing.Font("Segoe UI", 8.18868F);
+            this.txtItipoDoc.Font = new System.Drawing.Font("Segoe UI", 8.830189F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtItipoDoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(22)))), ((int)(((byte)(12)))));
             this.txtItipoDoc.Location = new System.Drawing.Point(21, 30);
             this.txtItipoDoc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.txtItipoDoc.Name = "txtItipoDoc";
-            this.txtItipoDoc.Size = new System.Drawing.Size(126, 17);
+            this.txtItipoDoc.Size = new System.Drawing.Size(118, 17);
             this.txtItipoDoc.TabIndex = 13;
             this.txtItipoDoc.Text = "Tipo de documento:";
             // 
@@ -1079,7 +1076,7 @@
             this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(23)))), ((int)(((byte)(12)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1100,7 +1097,7 @@
             this.dgvClientes.Name = "dgvClientes";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.18868F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(23)))), ((int)(((byte)(12)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;

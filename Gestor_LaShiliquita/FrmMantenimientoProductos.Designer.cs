@@ -69,7 +69,7 @@
             // 
             this.dgvProductos.AutoGenerateColumns = false;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(98)))), ((int)(((byte)(74)))));
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -157,7 +157,7 @@
             // txtIDProducto
             // 
             this.txtIDProducto.AutoSize = true;
-            this.txtIDProducto.Location = new System.Drawing.Point(23, 17);
+            this.txtIDProducto.Location = new System.Drawing.Point(23, 15);
             this.txtIDProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtIDProducto.Name = "txtIDProducto";
             this.txtIDProducto.Size = new System.Drawing.Size(23, 17);
@@ -358,6 +358,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMantenimientoProductos";
             this.Text = "FrmMantenimientoProductos";
+            this.Load += new System.EventHandler(this.FrmMantenimientoProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUCTOSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laShiliquitaBDDataSet)).EndInit();
