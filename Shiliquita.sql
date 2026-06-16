@@ -9,7 +9,11 @@ CREATE TABLE PROVEEDOR (
     correo VARCHAR(100),
     direccion VARCHAR(150)
 );
-
+CREATE TABLE CARGO (
+    CodCargo VARCHAR(10) PRIMARY KEY,
+    nombreCargo VARCHAR(50) NOT NULL,
+    salarioBase DECIMAL(10, 2) NOT NULL
+);
 CREATE TABLE EMPLEADO (
     nroDocE VARCHAR(15) PRIMARY KEY,         
     tipoDoc VARCHAR(15) NOT NULL,            
@@ -18,11 +22,11 @@ CREATE TABLE EMPLEADO (
     apellidoM VARCHAR(50) NOT NULL,
     nroContacto VARCHAR(15),
     fechaContrato DATE NOT NULL,
-    cargo VARCHAR(50),
-    salarioMen DECIMAL(10, 2)
+    CodCargo VARCHAR(10),
+    FOREIGN KEY (CodCargo) REFERENCES CARGO (CodCargo)
 );
 
-CREATE TABLE CLIENTES (
+CREATE TABLE CLIENTE (
     nroDocC VARCHAR(15) PRIMARY KEY,   
     tipoDoc VARCHAR(15) NOT NULL,           
     primerNom VARCHAR(50) NOT NULL,
@@ -31,8 +35,8 @@ CREATE TABLE CLIENTES (
     direccion VARCHAR(150)
 );
 
-CREATE TABLE PRODUCTOS (
-    IDProducto VARCHAR(10) PRIMARY KEY,       -- IDProducto*
+CREATE TABLE PRODUCTO (
+    IDProducto VARCHAR(10) PRIMARY KEY,      
     nomProd VARCHAR(100) NOT NULL,
     descripcion VARCHAR(250),
     categoria VARCHAR(50),
@@ -48,17 +52,19 @@ CREATE TABLE BOLETA (
     Total DECIMAL(10, 2) NOT NULL,
     nroDocC VARCHAR(15),                     
     nroDocE VARCHAR(15),                
-    FOREIGN KEY (nroDocC) REFERENCES CLIENTES(nroDocC), 
+    FOREIGN KEY (nroDocC) REFERENCES CLIENTE(nroDocC), 
     FOREIGN KEY (nroDocE) REFERENCES EMPLEADO(nroDocE)
 );
 
 CREATE TABLE DETALLE_BOLETA (
+    PRIMARY KEY (IDBoleta, IDProducto),
     IDBoleta VARCHAR(15),
     IDProducto VARCHAR(10),                
     nomProd VARCHAR(100) NOT NULL,            
     precioUnit DECIMAL(10, 2) NOT NULL,
     cantVendida INT NOT NULL,
-    PRIMARY KEY (IDBoleta, IDProducto),
     FOREIGN KEY (IDBoleta) REFERENCES BOLETA(IDBoleta),
-    FOREIGN KEY (IDProducto) REFERENCES PRODUCTOS(IDProducto)
+    FOREIGN KEY (IDProducto) REFERENCES PRODUCTO(IDProducto)
 );
+
+

@@ -240,12 +240,10 @@ namespace Gestor_LaShiliquita
 
             txtbIDProducto.Focus();
         }
-
         private void cbxNumC_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         private void FrmVenta_Load(object sender, EventArgs e)
         {
             this.bOLETATableAdapter.Fill(this.laShiliquitaBDDataSet.BOLETA);
@@ -255,5 +253,6 @@ namespace Gestor_LaShiliquita
         {
 
         }
+
     }
 }

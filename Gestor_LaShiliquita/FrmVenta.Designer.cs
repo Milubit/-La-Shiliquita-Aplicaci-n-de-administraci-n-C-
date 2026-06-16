@@ -26,8 +26,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtNumDocCliente = new System.Windows.Forms.Label();
             this.txtDniEmpleado = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.Label();
@@ -54,19 +53,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dETALLE_BOLETATableAdapter = new Gestor_LaShiliquita.LaShiliquitaBDDataSetTableAdapters.DETALLE_BOLETATableAdapter();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bOLETABindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bOLETABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bOLETATableAdapter = new Gestor_LaShiliquita.LaShiliquitaBDDataSetTableAdapters.BOLETATableAdapter();
-            this.bOLETABindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDBoletaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechahoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroDocCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroDocEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelVenta.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dETALLEBOLETABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laShiliquitaBDDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bOLETABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOLETABindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bOLETABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNumDocCliente
@@ -225,14 +228,14 @@
             this.dgvDetalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDetalle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDetalle.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(34)))), ((int)(((byte)(23)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(34)))), ((int)(((byte)(23)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDBoletaDataGridViewTextBoxColumn,
@@ -329,39 +332,10 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "TOTAL:";
             // 
-            // dataGridView1
+            // bOLETABindingSource1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(225)))), ((int)(((byte)(210)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(34)))), ((int)(((byte)(23)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
-            this.dataGridView1.DataSource = this.bOLETABindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(645, 243);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 45;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(154, 357);
-            this.dataGridView1.TabIndex = 19;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDBoleta";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IDBoleta";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 110;
+            this.bOLETABindingSource1.DataMember = "BOLETA";
+            this.bOLETABindingSource1.DataSource = this.laShiliquitaBDDataSet;
             // 
             // bOLETABindingSource
             // 
@@ -372,10 +346,62 @@
             // 
             this.bOLETATableAdapter.ClearBeforeFill = true;
             // 
-            // bOLETABindingSource1
+            // dataGridView1
             // 
-            this.bOLETABindingSource1.DataMember = "BOLETA";
-            this.bOLETABindingSource1.DataSource = this.laShiliquitaBDDataSet;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDBoletaDataGridViewTextBoxColumn1,
+            this.fechahoraDataGridViewTextBoxColumn,
+            this.totalDataGridViewTextBoxColumn,
+            this.nroDocCDataGridViewTextBoxColumn,
+            this.nroDocEDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.bOLETABindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(625, 243);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 45;
+            this.dataGridView1.Size = new System.Drawing.Size(176, 357);
+            this.dataGridView1.TabIndex = 19;
+            // 
+            // iDBoletaDataGridViewTextBoxColumn1
+            // 
+            this.iDBoletaDataGridViewTextBoxColumn1.DataPropertyName = "IDBoleta";
+            this.iDBoletaDataGridViewTextBoxColumn1.HeaderText = "IDBoleta";
+            this.iDBoletaDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.iDBoletaDataGridViewTextBoxColumn1.Name = "iDBoletaDataGridViewTextBoxColumn1";
+            this.iDBoletaDataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // fechahoraDataGridViewTextBoxColumn
+            // 
+            this.fechahoraDataGridViewTextBoxColumn.DataPropertyName = "Fecha_hora";
+            this.fechahoraDataGridViewTextBoxColumn.HeaderText = "Fecha_hora";
+            this.fechahoraDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechahoraDataGridViewTextBoxColumn.Name = "fechahoraDataGridViewTextBoxColumn";
+            this.fechahoraDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // nroDocCDataGridViewTextBoxColumn
+            // 
+            this.nroDocCDataGridViewTextBoxColumn.DataPropertyName = "nroDocC";
+            this.nroDocCDataGridViewTextBoxColumn.HeaderText = "nroDocC";
+            this.nroDocCDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nroDocCDataGridViewTextBoxColumn.Name = "nroDocCDataGridViewTextBoxColumn";
+            this.nroDocCDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // nroDocEDataGridViewTextBoxColumn
+            // 
+            this.nroDocEDataGridViewTextBoxColumn.DataPropertyName = "nroDocE";
+            this.nroDocEDataGridViewTextBoxColumn.HeaderText = "nroDocE";
+            this.nroDocEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nroDocEDataGridViewTextBoxColumn.Name = "nroDocEDataGridViewTextBoxColumn";
+            this.nroDocEDataGridViewTextBoxColumn.Width = 110;
             // 
             // FrmVenta
             // 
@@ -406,9 +432,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dETALLEBOLETABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laShiliquitaBDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bOLETABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOLETABindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bOLETABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,10 +467,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxNumE;
         private System.Windows.Forms.ComboBox cbxNumC;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource bOLETABindingSource;
         private LaShiliquitaBDDataSetTableAdapters.BOLETATableAdapter bOLETATableAdapter;
         private System.Windows.Forms.BindingSource bOLETABindingSource1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDBoletaDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechahoraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroDocCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroDocEDataGridViewTextBoxColumn;
     }
 }
