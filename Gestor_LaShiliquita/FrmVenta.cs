@@ -58,18 +58,18 @@ namespace Gestor_LaShiliquita
 
                         if (reader.Read())
                         {
-                            string nombreProducto = reader["nomProd"].ToString();
-                            decimal precioUnitario = Convert.ToDecimal(reader["precio"]);
+                            string nombreProducto = reader["nomProd"] != DBNull.Value ? reader["nomProd"].ToString() : "Sin Nombre";
+                            decimal precioUnitario = reader["precio"] != DBNull.Value ? Convert.ToDecimal(reader["precio"]) : 0m;
 
                             if (!int.TryParse(txtbCantidad.Text.Trim(), out int cantidadVendida) || cantidadVendida <= 0)
                             {
-                                MessageBox.Show("Por favor, ingrese una cantidad válida y mayor a cero.", "Cantidad Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Por favor, ingrese una cantidad válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
 
-                            tablaCarrito.Rows.Add(idBuscar, nombreProducto, precioUnitario, cantidadVendida);
-                            CalcularTotal();
+                            tablaCarrito.Rows.Add(numeroBoletaActual, idBuscar, nombreProducto, precioUnitario, cantidadVendida);
 
+                            CalcularTotal();
                             txtbIDProducto.Clear();
                             txtbCantidad.Text = "1";
                             txtbIDProducto.Focus();
@@ -94,7 +94,7 @@ namespace Gestor_LaShiliquita
                 {
                     conexion.Open();
 
-                    string queryClientes = "SELECT nroDocC FROM CLIENTE"; 
+                    string queryClientes = "SELECT nroDocC FROM CLIENTES"; 
                     using (SqlCommand cmd = new SqlCommand(queryClientes, conexion))
                     {
                         using (SqlDataReader reader = cmd.ExecuteReader())
@@ -189,48 +189,34 @@ namespace Gestor_LaShiliquita
                         try
                         {
                             string idBoletaGenerado = "";
-                            string queryBoleta = "INSERT INTO BOLETA (Fecha_hora, Total, nroDocC, nroDocE) " + "OUTPUT INSERTED.IDBoleta " + "VALUES (@Fecha, @Total, @Cliente, @Empleado)";
+                            string queryMax = "SELECT ISNULL(MAX(IDBoleta), 'B0000') FROM BOLETA";
+                            using (SqlCommand cmdMax = new SqlCommand(queryMax, conexion, transaccion))
+                            {
+                                string ultimoID = cmdMax.ExecuteScalar().ToString();
+                                int numero = int.Parse(ultimoID.Substring(1));
+                                idBoletaGenerado = "B" + (numero + 1).ToString("D4");
+                            }
+
+                            string queryBoleta = "INSERT INTO BOLETA (IDBoleta, Fecha_hora, Total, nroDocC, nroDocE) " +
+                                                 "VALUES (@ID, @Fecha, @Total, @Cliente, @Empleado)";
 
                             using (SqlCommand cmdB = new SqlCommand(queryBoleta, conexion, transaccion))
                             {
+                                cmdB.Parameters.AddWithValue("@ID", idBoletaGenerado); // ¡Ahora el ID ya no es nulo!
                                 cmdB.Parameters.AddWithValue("@Fecha", DateTime.Now);
                                 cmdB.Parameters.AddWithValue("@Total", totalAcumulado);
                                 cmdB.Parameters.AddWithValue("@Cliente", cbxNumC.Text.Trim());
                                 cmdB.Parameters.AddWithValue("@Empleado", cbxNumE.Text.Trim());
 
-                                idBoletaGenerado = cmdB.ExecuteScalar()?.ToString();
+                                cmdB.ExecuteNonQuery();
                             }
-
-                            foreach (DataRow fila in tablaCarrito.Rows)
-                            {
-                                string queryDetalle = "INSERT INTO DETALLE_BOLETA (IDBoleta, IDProducto, nomProd, precioUnit, cantVendida) " + "VALUES (@IdB, @IdP, @Nom, @Precio, @Cant)";
-                                using (SqlCommand cmdD = new SqlCommand(queryDetalle, conexion, transaccion))
-                                {
-                                    cmdD.Parameters.AddWithValue("@IdB", idBoletaGenerado);
-                                    cmdD.Parameters.AddWithValue("@IdP", fila["IDProducto"]);
-                                    cmdD.Parameters.AddWithValue("@Nom", fila["nomProd"]);
-                                    cmdD.Parameters.AddWithValue("@Precio", fila["precioUnit"]);
-                                    cmdD.Parameters.AddWithValue("@Cant", fila["cantVendida"]);
-
-                                    cmdD.ExecuteNonQuery();
-                                }
-
-                                string queryStock = "UPDATE PRODUCTOS SET Stock = Stock - @CantStock WHERE IDProducto = @IdPStock";
-                                using (SqlCommand cmdS = new SqlCommand(queryStock, conexion, transaccion))
-                                {
-                                    cmdS.Parameters.AddWithValue("@CantStock", fila["cantVendida"]);
-                                    cmdS.Parameters.AddWithValue("@IdPStock", fila["IDProducto"]);
-
-                                    cmdS.ExecuteNonQuery();
-                                }
-                            }
-                           transaccion.Commit();
-                            MessageBox.Show("¡Venta registrada con éxito en La Shiliquita!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            transaccion.Commit();
+                            MessageBox.Show("¡Venta registrada con éxito: " + idBoletaGenerado + "!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception ex)
                         {
                             transaccion.Rollback();
-                            MessageBox.Show("Error crítico en la transacción: " + ex.Message, "Venta Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Error crítico: " + ex.Message);
                         }
                     }
                 }
@@ -255,5 +241,19 @@ namespace Gestor_LaShiliquita
             txtbIDProducto.Focus();
         }
 
+        private void cbxNumC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmVenta_Load(object sender, EventArgs e)
+        {
+            this.bOLETATableAdapter.Fill(this.laShiliquitaBDDataSet.BOLETA);
+            CargarAutocompletados();
+        }
+        private void cbxNumE_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
