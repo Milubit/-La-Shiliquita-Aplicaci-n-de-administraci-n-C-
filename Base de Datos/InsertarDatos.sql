@@ -1,8 +1,14 @@
-INSERT INTO EMPLEADO (nroDocE, tipoDoc, primerNom, apellidoP, apellidoM, nroContacto, fechaContrato, cargo, salarioMen)
-VALUES 
-('20514261', 'DNI', 'Amelia', 'Caruajulca', 'Muñoz', '951425633', '2026-01-15', 'Cajera', 1200.00),
-('74182930', 'DNI', 'Carlos', 'Vigo', 'Pereyra', '942819304', '2025-06-01', 'Administrador', 2500.00),
-('48192034', 'DNI', 'Jorge', 'Saldaña', 'Rojas', '963810294', '2025-10-10', 'Encargado Alma', 1500.00);
+USE LaShiliquitaBD;
+INSERT INTO CARGO (CodCargo, nombreCargo, salarioBase) VALUES 
+('C001', 'Administrador', 2500.00),
+('C002', 'Cajero', 1200.00),
+('C003', 'Encargado almacén', 1500.00),
+('C004', 'Limpieza', 1200.00);
+
+INSERT INTO EMPLEADO (nroDocE, tipoDoc, primerNom, apellidoP, apellidoM, nroContacto, fechaContrato, CodCargo) VALUES 
+('20514261', 'DNI', 'Amelia', 'Caruajulca', 'Muñoz', '951425633', '2026-01-15', 'C001'),
+('74182930', 'DNI', 'Carlos', 'Vigo', 'Pereyra', '942819304', '2025-06-01', 'C002'),
+('48192034', 'DNI', 'Jorge', 'Saldaña', 'Rojas', '963810294', '2025-10-10', 'C003');
 
 INSERT INTO PROVEEDOR (nroDocProveedor, tipoDoc, nomEmpresa, nroContacto1, nroContacto2, correo, direccion)
 VALUES 
@@ -10,14 +16,14 @@ VALUES
 ('20194837261', 'RUC', 'Distribuidora Dulces del Norte', '951847201', NULL, 'contacto@dulcesnorte.com', 'Av. Industrial 520, Chiclayo'),
 ('10428193042', 'RUC', 'Envolturas y Empaques Cajamarca', '974810293', '920000000', 'empaquescajaofficial@gmail.com', 'Jr. Tarapacá 812, Cajamarca');
 
-INSERT INTO CLIENTES (nroDocC, tipoDoc, primerNom, apellidoP, apellidoM, direccion)
+INSERT INTO CLIENTE (nroDocC, tipoDoc, primerNom, apellidoP, apellidoM, direccion)
 VALUES 
 ('72819304', 'DNI', 'Luis', 'Robles', 'Castro', 'Jr. Amalia Puga 450, Cajamarca'),
 ('17281930410', 'RUC', 'Cafetería El Grano SAC', NULL, NULL, 'Av. El Maestro 789, Cajamarca'),
 ('45218392', 'DNI', 'María', 'Mendoza', 'Portal', 'Jr. Dos de Mayo 112, Cajamarca'),
 ('20748192031', 'RUC', 'Inversiones Turísticas del Norte', NULL, NULL, 'Av. Vía de Evitamiento 1015, Cajamarca');
 
-INSERT INTO PRODUCTOS (IDProducto, nomProd, descripcion, categoria, precio, stock, nroDocProveedor)
+INSERT INTO PRODUCTO (IDProducto, nomProd, descripcion, categoria, precio, stock, nroDocProveedor)
 VALUES 
 ('PROD01', 'PackX2 Chocolate 100g', 'Barra de chocolate amargo 100%', 'Packs y Regalos', 15.00, 12, '20543218901'),
 ('PROD02', 'Chocolate 250g', 'Barra de chocolate amargo 100%', 'Barras de Chocolate', 17.00, 7, '20543218901'),

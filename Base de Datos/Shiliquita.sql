@@ -42,6 +42,7 @@ CREATE TABLE PRODUCTO (
     categoria VARCHAR(50),
     precio DECIMAL(10, 2) NOT NULL,
     stock INT NOT NULL,
+    CHECK (stock >=0,
     nroDocProveedor VARCHAR(15),
     FOREIGN KEY (nroDocProveedor) REFERENCES PROVEEDOR(nroDocProveedor)
 );
@@ -60,8 +61,8 @@ CREATE TABLE DETALLE_BOLETA (
     PRIMARY KEY (IDBoleta, IDProducto),
     IDBoleta VARCHAR(15),
     IDProducto VARCHAR(10),                
-    nomProd VARCHAR(100) NOT NULL,            
-    precioUnit DECIMAL(10, 2) NOT NULL,
+    nomProd VARCHAR(100) NOT NULL,     --BUENA PRACTICA DENOMINADA SNAPSHOT       
+    precioUnit DECIMAL(10, 2) NOT NULL,--Sirve para el historial de la venta y que los precios no se modifiquen
     cantVendida INT NOT NULL,
     FOREIGN KEY (IDBoleta) REFERENCES BOLETA(IDBoleta),
     FOREIGN KEY (IDProducto) REFERENCES PRODUCTO(IDProducto)
